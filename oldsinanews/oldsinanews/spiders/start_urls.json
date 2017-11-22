@@ -1,0 +1,42 @@
+[
+    {
+        "first_period": [
+            "http://news.sina.com.cn/old1000/news1000_19990526.shtml"
+        ],
+        "second_period": [
+            "http://news.sina.com.cn/old1000/news1000_20070120/data0.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data1.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data2.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data3.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data4.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data5.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data6.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data7.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data8.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data9.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data10.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data11.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data12.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data13.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data14.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data15.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data16.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data17.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data18.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data19.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data20.js",
+            "http://news.sina.com.cn/old1000/news1000_20070120/data21.js"
+        ],
+        "third_period": [
+            "http://rss.sina.com.cn/rollnews/news_gn/2007-12-12.js",
+            "http://rss.sina.com.cn/rollnews/news_gj/2007-12-12.js",
+            "http://rss.sina.com.cn/rollnews/news_sh/2007-12-12.js",
+            "http://rss.sina.com.cn/rollnews/jczs/2007-12-12.js",
+            "http://rss.sina.com.cn/rollnews/sports/2007-12-12.js",
+            "http://rss.sina.com.cn/rollnews/ent/2007-12-12.js",
+            "http://rss.sina.com.cn/rollnews/tech/2007-12-12.js",
+            "http://rss.sina.com.cn/rollnews/finance/2007-12-12.js",
+            "http://rss.sina.com.cn/rollnews/stock/2007-12-12.js"
+        ]
+    }
+]
