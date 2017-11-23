@@ -24,16 +24,40 @@ class ProxyPool(object):
 
 
 class CustomHttpProxyMiddleware(object):
+    def __init__(self, headers):
+        self.headers = headers
+
+    @classmethod
+    def from_settings(cls, settings):
+        return cls(settings.getlist('DEFAULT_REQUEST_HEADERS'))
+
     def process_request(self, request, spider):
         try:
-            request.meta['proxy'] = ProxyPool.get_proxy()
+            request.headers['Headers'] = self.headers
+            # request.meta['headers'] = self.headers
+            request.meta['proxy'] = ProxyPool.get_proxy()['https']
         except Exception as e:
             """
             如果爬虫代理挂了，可以在这里根据路径重新启动爬虫
             """
+            print(e)
             pass
 
+    def process_response(self, request, response, spider):
+        if response.status != 200:
+            """
+            
+            """
+            pass
+        return response
 
+
+# class CatchExceptionMiddleware(object):
+#     def process_response(self, request, response, spider):
+#         if response.status != 200:
+#             with open('error_url.json', 'w') as f:
+#                 print(request.url)
+#                 f.write(request.url)
 # class OldsinanewsSpiderMiddleware(object):
 #     # Not all methods need to be defined. If a method is not defined,
 #     # scrapy acts as if the spider middleware does not modify the

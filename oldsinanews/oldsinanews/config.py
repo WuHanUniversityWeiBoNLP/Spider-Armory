@@ -12,6 +12,8 @@ BASE_PATH = os.path.abspath(os.path.dirname(__file__))
 
 RESULT_PATH = os.path.join(BASE_PATH, 'result')
 
+SPIDERS_START_URLS_PATH = os.path.join(BASE_PATH, 'spiders')
+
 __all__ = [USE_PROXY, BASE_PATH]
 
 

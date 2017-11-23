@@ -9,18 +9,22 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 from oldsinanews.config import USE_PROXY
+import logging
 
 BOT_NAME = 'oldsinanews'
 
 SPIDER_MODULES = ['oldsinanews.spiders']
 NEWSPIDER_MODULE = 'oldsinanews.spiders'
-
+FEED_EXPORT_ENCODING = 'utf-8'
+logging.basicConfig(format='%(asctime)s,%(msecs)d %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s',
+                    datefmt='%d-%m-%Y:%H:%M:%S', level=logging.DEBUG)
+logger = logging.getLogger()
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'oldsinanews (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+# ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32

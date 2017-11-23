@@ -95,21 +95,25 @@ class InitStartUrls(object):
             all_date = self.arbitrary_date_range('old', 2007, '2007-01-20', '2007-12-11')
             second_period_urls = []
             for year_month_day in all_date:
-                logging.info(year_month_day)
-                param = ''.join(year_month_day.split('-'))
-                base_url = 'http://news.sina.com.cn/old1000/news1000_{}/data{}.js'
-                start_url = base_url.format(param, 0)
-                logging.info(start_url)
-                request = requests.get(url=start_url, headers=self.headers, proxies=InitStartUrls.get_proxy())
-                js_content = request.text.split(';')
-                total_news = int(re.findall(r'\d+', js_content[2])[0])
-                js_file_news = int(re.findall(r'\d+', js_content[4])[0])
-                total_page_num = int(total_news / js_file_news) + 1
-                logging.info(total_page_num)
-                rest_urls = [base_url.format(param, i) for i in range(1, total_page_num+1)]
-                second_period_urls.append(start_url)
-                second_period_urls.extend(rest_urls)
-                # break
+                try:
+                    logging.info(year_month_day)
+                    param = ''.join(year_month_day.split('-'))
+                    base_url = 'http://news.sina.com.cn/old1000/news1000_{}/data{}.js'
+                    start_url = base_url.format(param, 0)
+                    logging.info(start_url)
+                    request = requests.get(url=start_url, headers=self.headers, proxies=InitStartUrls.get_proxy())
+                    js_content = request.text.split(';')
+                    total_news = int(re.findall(r'\d+', js_content[2])[0])
+                    js_file_news = int(re.findall(r'\d+', js_content[4])[0])
+                    total_page_num = int(total_news / js_file_news) + 1
+                    logging.info(total_page_num)
+                    rest_urls = [base_url.format(param, i) for i in range(1, total_page_num+1)]
+                    second_period_urls.append(start_url)
+                    second_period_urls.extend(rest_urls)
+                    # break
+                except Exception as err:
+                    logging.info(err)
+                    continue
             return second_period_urls
         elif period == 'third':
             all_date = self.arbitrary_date_range('old', 2007, '2007-12-12', '2007-12-31') + \
@@ -137,8 +141,8 @@ class InitStartUrls(object):
         first_period_urls = self.decide('first')
         second_period_urls = self.decide('second')
         third_period_urls = self.decide('third')
-        result = [{'first_period': first_period_urls, 'second_period': second_period_urls,
-                   'third_period': third_period_urls}]
+        result = {'first_period': first_period_urls, 'second_period': second_period_urls,
+                  'third_period': third_period_urls}
         with open('start_urls.json', 'w', encoding='utf8') as f:
             f.write(json.dumps(result, sort_keys=True, indent=4, ensure_ascii=False))
 

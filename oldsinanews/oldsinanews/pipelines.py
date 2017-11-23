@@ -13,11 +13,14 @@ import dateutil.parser as dparser
 
 class OldsinanewsPipeline(object):
     def process_item(self, item, spider):
-        if item['news_id']:
-            dt = dparser.parse(item['news_time'], fuzzy=True).strptime("%Y-%m-%d")
-            datetime_file_path = os.path.join(RESULT_PATH, dt)
-            with open('%s/%s.json' % (datetime_file_path, item['news_id']), 'w') as f:
-                f.write(json.dumps(item))
-        else:
-            raise DropItem("Missing title in %s" % item)
+        print('&&&&&&&&&&&&&&&&&&&&&&')
+        print(item)
+        print('&&&&&&&&&&&&&&&&&&&&&&')
+        # if item['news_id']:
+        #     dt = dparser.parse(item['news_time'], fuzzy=True).strptime("%Y-%m-%d")
+        #     datetime_file_path = os.path.join(RESULT_PATH, dt)
+        #     with open('%s/%s.json' % (datetime_file_path, item['news_id']), 'w') as f:
+        #         f.write(json.dumps(item))
+        # else:
+        #     raise DropItem("Missing title in %s" % item)
 
