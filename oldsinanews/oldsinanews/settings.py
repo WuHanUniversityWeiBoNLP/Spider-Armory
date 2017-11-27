@@ -16,9 +16,7 @@ BOT_NAME = 'oldsinanews'
 SPIDER_MODULES = ['oldsinanews.spiders']
 NEWSPIDER_MODULE = 'oldsinanews.spiders'
 FEED_EXPORT_ENCODING = 'utf-8'
-logging.basicConfig(format='%(asctime)s,%(msecs)d %(levelname)-8s [%(filename)s:%(lineno)d] %(message)s',
-                    datefmt='%d-%m-%Y:%H:%M:%S', level=logging.DEBUG)
-logger = logging.getLogger()
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'oldsinanews (+http://www.yourdomain.com)'
@@ -62,7 +60,7 @@ DEFAULT_REQUEST_HEADERS = {
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   'oldsinanews.middlewares.CatchExceptionMiddleware': None,
+   # 'oldsinanews.middlewares.CatchExceptionMiddleware': 2,
 }
 if USE_PROXY:
     DOWNLOADER_MIDDLEWARES['oldsinanews.middlewares.CustomHttpProxyMiddleware'] = 1

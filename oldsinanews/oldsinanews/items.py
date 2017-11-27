@@ -16,3 +16,4 @@ class OldsinanewsItem(scrapy.Item):
     news_url = scrapy.Field()  # 新闻url
     news_time = scrapy.Field()  # 新闻时间
     news_content = scrapy.Field()  # 新闻内容
+    news_html = scrapy.Field()  # 新闻原始html
